@@ -1,0 +1,60 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Current File, full constarint",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "-w",
+                "30",
+                "-v",
+                "110",
+                "-t",
+                "60",
+                "-g",
+                "40"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Current File, partial constarint",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "-w",
+                "30",
+                "-v",
+                "110"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Current File, partial constarint with length",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "-w",
+                "30",
+                "-v",
+                "110",
+                "-l",
+                "40:50"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
