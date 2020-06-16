@@ -1,6 +1,9 @@
 #! python3
 #!/usr/bin/env python
 
+# Copyright: Khan Kibria
+# License: GNU GPL 3.0
+
 import math
 import argparse
 
