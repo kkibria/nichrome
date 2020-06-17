@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Copyright: Khan Kibria
 # License: GNU GPL 3.0
