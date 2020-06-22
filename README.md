@@ -35,6 +35,26 @@ The command supports following nichrome wire types, which indicates the percenta
 For example, The nichrome wire commonly called *Nichrome 60*, which actually has 60% Nickel, is to be entered as '``-t 60``'. The range format is also 
 supported for wire types so you can specify type like '``-t 30:70``' as well.
 
+# Fine tuning the result
+Once nichrome.py is used to get a broad idea from the list it produces, you might want to fine tune the results with more resolution.
+You can use ``nicrlen.py`` for that purpose.   
+
+```
+usage: nicrlen.py [-h] [-w WATTS] [-v VOLTAGE] [-t WIRE_TYPE] [-g AWG]
+                  [-n NUMBER]
+
+  -h, --help            show this help message and exit
+  -w WATTS, --watts WATTS
+                        Power range in watts
+  -v VOLTAGE, --voltage VOLTAGE
+                        Supply voltage in volts
+  -t WIRE_TYPE, --wire-type WIRE_TYPE
+                        Nichrome wire type
+  -g AWG, --awg AWG     Nichrome wire gauge
+  -n NUMBER, --number NUMBER
+                        Number of parallel sections
+```
+
 ## Current Capacity
 Make sure not to exceed the current capacity of the nichrome wire. Check the
 Wikipedia article, <https://en.wikipedia.org/wiki/Nichrome> for more information. The heat produced by the wire must be carried away

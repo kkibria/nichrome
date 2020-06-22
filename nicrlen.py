@@ -5,15 +5,7 @@
 
 import math
 import argparse
-import nicrwire
-
-r_type = {}
-r_type[20] = 572
-r_type[30] = 620
-r_type[40] = 626
-r_type[60] = 668
-r_type[70] = 709
-r_type[80] = 656
+import nicrlib
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -24,7 +16,7 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--number", action="store", type=int, default=1, help="Number of parallel sections")
     args = parser.parse_args()
 
-    len =  nicrwire.calc_wire_length(args.watts / args.number , args.voltage, args.wire_type, args.awg)
+    len =  nicrlib.calc_wire_length(args.watts / args.number , args.voltage, args.wire_type, args.awg)
 
     feet = int(len)
     inches = len*12 % 12

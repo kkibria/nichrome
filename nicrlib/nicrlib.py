@@ -24,4 +24,3 @@ def calc_wire_length (watts, voltage, wire_type, awg):
     length_in_ft = ohm/ohm_per_ft
 
     return length_in_ft
-
