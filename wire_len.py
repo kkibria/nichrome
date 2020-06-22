@@ -28,5 +28,10 @@ if __name__ == "__main__":
 
     feet = int(len)
     inches = len*12 % 12
-    print ('sections: {}, power: {} watts, voltage: {} volts, wire-type: Nichrome-{}, gauge: {} awg, length: {} feet {:3.2f} inches'.format(
-        args.number, args.watts, args.voltage, args.wire_type, args.awg, feet, inches))
+
+    lenstr = "{:3.2f} inches".format(inches)
+    if feet:
+        lenstr = "{} feet {:3.2f} inches".format(feet, inches)
+
+    print ('sections: {}, power: {} watts, voltage: {} volts, wire-type: Nichrome-{}, gauge: {} awg, length: {}.'.format(
+        args.number, args.watts, args.voltage, args.wire_type, args.awg, lenstr))
