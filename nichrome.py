@@ -5,6 +5,8 @@
 
 import math
 import argparse
+import nicrwire
+
 
 r_type = {}
 r_type[20] = 572
@@ -13,18 +15,6 @@ r_type[40] = 626
 r_type[60] = 668
 r_type[70] = 709
 r_type[80] = 656
-
-def calc_wire_length (watts, voltage, wire_type, awg):
-    ohm = voltage*voltage/watts
-    ohm_per_cmf = r_type[wire_type]
-    dia_inch = math.exp(-1.12436 - 0.11594*awg)
-    dia_mil = dia_inch*1000
-    cs_circular_mil = dia_mil*dia_mil
-    cs_sq_mil = cs_circular_mil*math.pi/4
-    ohm_per_ft = ohm_per_cmf/cs_circular_mil
-    length_in_ft = ohm/ohm_per_ft
-
-    return length_in_ft
 
 def spec(string):
     try:
@@ -95,8 +85,6 @@ if __name__ == "__main__":
         print(e)
         exit(1)
 
-    len = calc_wire_length(30, 110, 60, 40)
-
     for watts in watts_range:
         for voltage in voltage_range:
             for wire_type in wire_type_range:
@@ -105,7 +93,7 @@ if __name__ == "__main__":
                         min_length = length
                         max_length = length + length_range.step
                         try:
-                            l = calc_wire_length(watts, voltage, wire_type, awg)
+                            l = nicrwire.calc_wire_length(watts, voltage, wire_type, awg)
                             if (l >= min_length and l < max_length):
                                 print ('power: {} watts, voltage: {} volts, wire-type: Nichrome-{}, gauge: {} awg, length: {:3.2f} feet'.format(watts, voltage, wire_type, awg, l))
                         except:
